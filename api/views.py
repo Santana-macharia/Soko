@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+import requests
 
 def users_list(request):
-    return render(request, 'api/users_list.html', {})
+    r = requests.get ('https://jsonplaceholder.typicode.com/users')
+    data = r.json()
+    return render(request, 'api/users_list.html', {'data': data})
