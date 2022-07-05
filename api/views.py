@@ -8,4 +8,7 @@ def users_list(request):
     data = r.json()
     return render(request, 'api/users_list.html', {'data': data})
 
+def index(request):
+    return render(request, 'admin/base_site.html')
+
 
